@@ -1,0 +1,60 @@
+\section{Podstawy rekurencji}
+\sectionframe
+
+\begin{frame}[fragile]
+  \frametitle{Funkcja rekurencyjna}
+  Funkcja rekurencyjna to taka, która w swojej definicji odwołuje się do
+  siebie samej.
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Przykład}
+    Silnia zdefiniowana jest jako:
+    \begin{eqnarray}
+      \nonumber 0! &=& 1\\
+      \nonumber n! &=& n\cdot(n-1)!\text{, dla }n\neq 0
+    \end{eqnarray}
+  \end{block}
+  \pause
+
+  Co w Haskellu można zapisać jako
+  \begin{lstlisting}[language=Haskell]
+silnia 0 = 1
+silnia n = n*silnia (n-1)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Potęgowanie rekurencyjne}
+  Potęgę o wykładniku naturalnym również można zdefiniować rekurencyjnie:
+
+  \begin{eqnarray}
+    \nonumber a^0 &=& 1 \\
+    \nonumber a^n &=& a\cdot a^{n-1}\text{, dla }n \neq 0
+  \end{eqnarray}
+  \pause
+
+  W jaki sposób zapisać to w Haskellu?
+  \pause
+  \begin{lstlisting}[language=Haskell]
+potega a 0 = 1
+potega a n = a*potega a (n-1)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 5}
+    Napisz funkcję \texttt{suma\_kwadratow n}, która policzy sumę kwadratów
+    liczb od 1 do $n$ włącznie.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+suma_kwadratow 1 = 1
+suma_kwadratow n = n^2 + suma_kwadratow (n-1)
+    \end{lstlisting}
+  \end{block}
+\end{frame}

@@ -1,0 +1,105 @@
+\section{Wprowadzenie}
+\sectionframe
+
+\begin{frame}
+  \frametitle{Materiały}
+
+  \begin{itemize}
+    \item {
+      \texttt{haskell.mariuszrozycki.pl}
+
+      Slajdy (w tym opisana wersja z zajęć), kody źródłowe,
+      dodatkowe zadania i materiały, filmy (niedługo)
+      \vspace{1em}
+    }
+    \item {
+      \texttt{github.com/mrozycki/haskell-course-pl}
+
+      To, co wyżej, w formie surowej (tj. pliki \TeX{}owe itp.)
+      \vspace{1em}
+    }
+    \item {
+      \texttt{learnyouahaskell.com} (ang.)
+
+      Anglojęzyczna strona z kursem programowania w Haskellu
+      \vspace{1em}
+    }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Narzędzia}
+  \begin{itemize}
+    \item {
+      \textbf{WinGHCi}. 
+      Kompilator i interpreter języka Haskell dla systemu Windows.
+
+      Wchodzi w skład pakietu Haskell Platform.
+      \vspace{1em}
+    }
+    \item {
+      \textbf{Notepad++}. Edytor tekstu.
+
+      Każdy inny edytor tekstu (vim, emacs, notatnik) też się sprawdzi.
+    }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Programowanie funkcjonalne (1)}
+  Paradygmat (trudne słowo) programowania, odmienny od programowania
+  imperatywnego (kolejne trudne słowo), w którym zamiast mówić komputerowi
+  \textbf{jak} ma wykonywać obliczenia, mówimy mu \textbf{co} ma policzyć.
+  \vspace{1em}
+
+  Poza tym, tak jak nazwa wskazuje, opiera się na \textit{funkcjach}.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Programowanie funkcjonalne (2)}
+  Na przykład w C++ (programowanie imperatywne) napisalibyśmy:
+
+  \begin{center}
+    \begin{minipage}[c]{0.9\textwidth}
+      \begin{lstlisting}[language=C++]
+int n; cin >> n;
+
+int wynik = 1;
+for (int i = 0; i < n; i++) {
+  wynik = wynik*i;
+}
+
+cout << wynik; 
+      \end{lstlisting}
+    \end{minipage}
+  \end{center}
+  \pause
+  Aby policzyć silnię.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Programowanie funkcjonalne (3)}
+  Natomiast w Haskellu (programowanie funkcjonalne) napiszemy:
+
+  \begin{center}
+    \begin{minipage}[c]{0.9\textwidth}
+      \begin{lstlisting}[language=haskell]
+silnia 0 = 1
+silnia n = n*silnia (n-1)
+      \end{lstlisting}
+    \end{minipage}
+  \end{center}
+
+  A w ML (również programowanie funkcjonalne) napisalibyśmy:
+  \begin{center}
+    \begin{minipage}[c]{0.9\textwidth}
+      \begin{lstlisting}[language=ML]
+fun silnia 0 = 1;
+  | silnia n = n*(silnia (n-1));
+      \end{lstlisting}
+    \end{minipage}
+  \end{center}
+
+  W tym kursie skupimy się jednak na Haskellu.
+
+\end{frame}

@@ -1,0 +1,23 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\newcounter{qcounter}
+\newenvironment{questions}
+  {\begin{list}{\textbf{Zadanie \arabic{qcounter}}}{\usecounter{qcounter}}}%
+  {\end{list}}%
+
+\title{Haskell -- zbiór zadań}
+\author{Mariusz Różycki}
+\date{rev. 2014.03.27.1}
+
+\begin{document}
+
+\maketitle
+
+\input{2-basics/problems.tex}
+\input{3-recursion/problems.tex}
+\input{4-flow_control/problems.tex}
+
+\end{document}

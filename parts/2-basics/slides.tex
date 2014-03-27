@@ -1,0 +1,131 @@
+\section{Podstawy Haskella}
+\sectionframe
+
+\begin{frame}[fragile]
+  \frametitle{Zapytania}
+  GHCi jest interpreterem, zatem musimy wydawać mu \textit{zapytania}, aby
+  otrzymać interesujący nas wynik.
+
+  \vfill
+  \begin{center}
+    \begin{minipage}{0.4\textwidth}
+      \Large
+      \begin{verbatim}
+Prelude> 2+2*2
+6
+it :: Integer
+      \end{verbatim}
+    \end{minipage}
+  \end{center}
+  \vfill
+  \pause
+
+  Ile wynosi $2+2^{22}$?
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Definiowanie funkcji}
+  
+  Możemy w zewnętrznym pliku zdefiniować własne funkcje, które potem
+  będziemy wykorzystywać w zapytaniach.
+  \vspace{1em}
+  \pause
+
+  Stwórzmy plik \texttt{funkcje.hs}, w którym napiszemy:
+  \begin{center}
+    \Large{\texttt{kwadrat x = x*x}}
+  \end{center}
+  \vspace{1em}
+  \pause
+
+  Po wczytaniu go do GHCi możemy wykonać zapytanie:
+  \begin{center}
+    \Large{\texttt{Main> kwadrat 23}}
+  \end{center}
+  \vspace{1em}
+  \pause
+
+  Jaki otrzymamy wynik?
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+    \begin{block}{Zadanie 1}
+    Napisz funkcję \texttt{potega\_2 n}, która policzy wartość $n$-tej
+    potęgi 2. Na przykład \texttt{potega\_2 16} zwróci 65 536.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+potega_2 n = 2^n
+    \end{lstlisting}
+  \end{block}
+  \pause
+
+  \begin{block}{Zadanie 2}
+    Napisz funkcję \texttt{suma n}, która policzy wartość sumy liczb od 1 do $n$.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+suma n = n*(n+1)/2
+    \end{lstlisting}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Funkcje wielu argumentów}
+  Funkcje w Haskellu mogą przyjmować więcej niż jedną wartość.
+  \vspace{1em}
+
+  \begin{lstlisting}[language=Haskell]
+suma_kwadratow x y = x^2 + y^2
+  \end{lstlisting}
+  \vspace{1em}
+  \pause
+
+  Jaki wynik zwróci zapytanie \texttt{suma\_kwadratow 3 4}?
+  \vspace{1em}
+  \pause
+
+  Jaki wynik zwróci zapytanie \texttt{suma\_kwadratow 1.2 0.5}?
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 3}
+    Napisz funkcję \texttt{srednia a b}, która policzy średnią arytmetyczną
+    liczb $a$ i $b$.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+srednia a b = (a+b)/2
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 4}
+    Napisz funkcję \texttt{jednomian a x n}, która policzy wartość jednomianu
+    $ax^n$.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+jednomian a x n = a*x^n
+    \end{lstlisting}
+  \end{block}
+\end{frame}

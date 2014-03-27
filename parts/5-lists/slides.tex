@@ -1,0 +1,110 @@
+\section{Listy}
+\sectionframe
+
+\begin{frame}
+  \frametitle{Podstawowa notacja list}
+  Co zwróci zapytanie \texttt{[1..10]}?
+  \vspace{1em}
+  \pause
+
+  Listę elementów od 1 do 10:
+
+  \texttt{[1,2,3,4,5,6,7,8,9,10]}
+  \vspace{2em}
+  \pause
+
+  Możemy też napisać \texttt{[1,3..10]}. Co otrzymamy?
+  \vspace{1em}
+  \pause
+
+  \texttt{[1,3,5,7,9]}
+  \vspace{2em}
+  \pause
+
+  Możemy również po prostu zapisać listę jako oddzielone przecinkami
+  pojedyncze elementy, tak jak widoczne jest to w wynikach poprzednich
+  dwóch zapytań.
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Operacje na listach}
+  Konkatenacja (łączenie) list
+  
+  \texttt{[2,4,6] ++ [5,3,1]}
+  \vspace{1em}
+  \pause
+
+  Dołączenie nowego elementu z przodu listy
+
+  \texttt{2:[4,3]}
+  \vspace{1em}
+  \pause
+
+  Znajdowanie długości listy
+
+  \texttt{length [5,6,8,4,2,5,1,7,9]}
+  \vspace{1em}
+  \pause
+
+  Sumowanie listy
+
+  \texttt{sum [1..10]}
+  \vspace{1em}
+  \pause
+
+  Znajdowanie maksimum listy (minimum analogicznie)
+
+  \texttt{minimum [5,6,8,4,2,5,1,7,9]}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Listy w funkcjach}
+  Funkcje mogą zwracać listy jako wynik:
+
+  \texttt{przedzial a b = [a..b]}
+  \vspace{1em}
+  \pause
+
+  Ale mogą być także przekazywane jako argumenty:
+
+  \texttt{srednia\_listy l = (sum l)/(length l)}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 5}
+    Napisz funkcję \texttt{suma\_przedzialu a b}, która zwróci sumę liczb
+    naturalnych od $a$ do $b$ włącznie.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+suma_przedzialu a b = sum [a..b]
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 6}
+    Napisz funkcję \texttt{suma\_list l1 l2}, która zwróci sumaryczną
+    długość list \texttt{l1} i \texttt{l2}.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+suma_list l1 l2 = sum (l1 ++ l2);
+    \end{lstlisting}
+
+    Albo:
+
+    \begin{lstlisting}[language=Haskell]
+suma_list l1 l2 = sum l1 + sum l2;
+    \end{lstlisting}
+  \end{block}
+\end{frame}

@@ -1,0 +1,37 @@
+\documentclass[t]{beamer}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue}
+}
+
+\title{Podstawy programowania funkcjonalnego}
+\subtitle{haskell.mariuszrozycki.pl}
+\author{Mariusz Różycki}
+\institute{Churchill College, University of Cambridge}
+\date{rev. 2014.03.27.1}
+
+\defbeamertemplate*{own section page}{default}[1][]
+{
+  \centering
+    \begin{beamercolorbox}[sep=8pt,center,#1]{section title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+}
+\newcommand*{\sectionframe}{\frame[c]{\usebeamertemplate*{own section page}}}
+
+\begin{document}
+
+\frame{\maketitle}
+
+\input{1-intro/slides.tex}
+\input{2-basics/slides.tex}
+\input{3-recursion/slides.tex}
+\input{4-flow_control/slides.tex}
+\input{5-lists/slides.tex}
+
+\end{document}

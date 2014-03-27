@@ -1,0 +1,123 @@
+\section{Kontrola przebiegu programu}
+\sectionframe
+
+\begin{frame}
+  \frametitle{Kontrola przebiegu programu}
+  Mechanizmy służące kontroli przebiegu programu, to wszystkie te elementy
+  języka, które umożliwiają ,,podejmowanie decyzji''.
+  \vspace{1em}\pause
+
+  We współczesnych językach imperatywnych możemy spotkać się z instrukcjami
+  warunkowymi \texttt{if} oraz \texttt{switch}, a także pętlami \texttt{for},
+  \texttt{foreach}, \texttt{while} itp.
+  \vspace{1em}\pause
+
+  W językach funkcjonalnych spotkać możemy się, oprócz instrukcji warunkowych,
+  z dopasowaniem do wzorca czy pętlami.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dopasowanie do wzorca}
+  W dopasowaniu do wzorca podajemy kilka definicji funkcji, z których każda
+  posiada inny wzór argumentów wejściowych (patrz rekurencja).
+  \vspace{1em}\pause
+
+  Wzorce są sprawdzane w kolejności pojawienia się w programie na podstawie
+  przekazanych argumentów i wybierana jest pierwsza pasująca definicja.
+
+  \begin{block}{Przykład}
+    \begin{lstlisting}[language=Haskell]
+silnia 0 = 1
+silnia n = n*silnia (n-1)
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{if\ldots then\ldots else\ldots}}
+  Podstawowym sposobem kontroli przebiegu programu we wszystkich współczesnych
+  językach programowania jest wyrażenie warunkowe \texttt{if}.
+  \vspace{1em}\pause
+  
+  W Haskellu przyjmuje ono postać \texttt{if <warunek> then <wartosc\_prawda> 
+  else <wartosc\_falsz>}.
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Przykład -- wartość bezwzględna}
+    \begin{lstlisting}[language=Haskell]
+wartosc_bezwzgledna n = if n > 0 then n else -n
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 6}
+    Ciąg Collatza dla danego $a$ zdefiniowany jest następująco:
+    \begin{eqnarray}
+      \nonumber c_0 &=& a \\
+      \nonumber c_{n+1} &=& 
+	\left\{\begin{array}{ll}
+	  \frac12{c_n}&\text{dla $c_n$ parzystego}\\
+	  3c_n+1&\text{dla $c_n$ nieparzystego}
+	\end{array} \right.
+    \end{eqnarray}
+    Napisz funkcję \texttt{collatz cn}, która dla danego $c_n$ obliczy i zwróci
+    wartość $c_{n+1}$.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+collatz n = if mod n 2 == 0 
+	    then div n 2 
+	    else n*3+1
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Warunki w definicji}
+  Gdybyśmy chcieli sprawdzić wiele różnych warunków przy użyciu wyrażeń
+  \texttt{if}, wynik byłby dość trudny do zrozumienia.
+  \vspace{1em}\pause
+
+  Haskell daje nam możliwość podania warunków w definicji funkcji,
+  na przykład:
+
+  \begin{lstlisting}[language=Haskell]
+wartosc_bezwzgledna n
+  | n >= 0 = n
+  | otherwise = -n
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Zadania}
+  \begin{block}{Zadanie 7}
+    Funkcja signum zdefiniowana jest następująco
+    \begin{equation*}
+      sgn(n) =
+	\left\{\begin{array}{ll}
+	  1 &\text{dla $n > 0$}\\
+	  0 &\text{dla $n = 0$}\\
+	  -1 &\text{dla $n < 0$}\\
+	\end{array} \right.
+    \end{equation*}
+    Napisz funkcję \texttt{signum n}, która dla danego $n$ obliczy i zwróci
+    wartość $sgn(n)$.
+  \end{block}
+  \vspace{1em}
+  \pause
+
+  \begin{block}{Rozwiązanie}
+    \begin{lstlisting}[language=Haskell]
+signum n
+  | n > 0 = 1
+  | n == 0 = 0
+  | otherwise = -1
+    \end{lstlisting}
+  \end{block}
+\end{frame}
