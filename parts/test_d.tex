@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\newcounter{qcounter}
+\newenvironment{questions}
+  {\begin{list}{\textbf{Zadanie \arabic{qcounter}}}{\usecounter{qcounter}}}%
+  {\end{list}}%
+
+\title{Haskell}
+\author{Grupa D}
+\date{2~maja 2014}
+
+\begin{document}
+
+\maketitle
+
+Na kartce papieru napisz definicje funkcji opisanych poniżej. Nie musisz
+przejmować się typami, za konflikty typów nie będą odejmowane punkty.
+
+\begin{enumerate}
+  \item {
+    \texttt{m2ft d} -- przelicza podany w metrach dystans $d$ na stopy.
+    Możesz przyjąć, że 1 stopa to 30,5 centymetra.
+  }
+
+  \item {
+    \texttt{heron a b c} -- liczy pole trójkąta o bokach długości $a$, $b$ i $c$.
+    Możesz użyć wbudowanej funkcji \texttt{sqrt}.
+  }
+
+  \item {
+    \texttt{trojmian\_kwadratowy a b c} -- liczy liczbę rozwiązań równania 
+    $ax^2 + bx + c = 0$.
+  }
+
+  \item {
+    \texttt{liebniz k} -- liczy $k$-te przybliżenie liczby $\pi$ z szeregu 
+    Liebniza. 
+    
+    Szereg Liebniza wygląda następująco:
+    $$\sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1}$$ lub bardziej po ludzku:
+    $$1-\frac13 + \frac15 - \frac17 + \cdots$$
+  }
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\newcounter{qcounter}
+\newenvironment{questions}
+  {\begin{list}{\textbf{Zadanie \arabic{qcounter}}}{\usecounter{qcounter}}}%
+  {\end{list}}%
+
+\title{Haskell}
+\author{Grupa A}
+\date{11~kwietnia 2014}
+
+\begin{document}
+
+\maketitle
+
+Na kartce papieru napisz definicje funkcji opisanych poniżej. Nie musisz
+przejmować się typami, za konflikty typów nie będą odejmowane punkty.
+
+\begin{enumerate}
+  \item {
+    \texttt{potega\_2 n} -- liczy wartość $n$-tej potęgi 2. 
+    Możesz użyć wbudowanego w Haskella potęgowania.
+  }
+
+  \item {
+    \texttt{srednia a b} -- liczy średnią arytmetyczną liczb $a$ i $b$.
+  }
+
+  \item {
+    \texttt{wartosc\_bezwzgledna x} -- liczy wartość modułu z $x$.
+  }
+
+  \item {
+    \texttt{suma\_kwadratow n} -- liczy sumę kwadratów liczb od 1 do $n$ 
+    włącznie.
+  }
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\newcounter{qcounter}
+\newenvironment{questions}
+  {\begin{list}{\textbf{Zadanie \arabic{qcounter}}}{\usecounter{qcounter}}}%
+  {\end{list}}%
+
+\title{Haskell}
+\author{Grupa B}
+\date{11~kwietnia 2014}
+
+\begin{document}
+
+\maketitle
+
+Na kartce papieru napisz definicje funkcji opisanych poniżej. Nie musisz
+przejmować się typami, za konflikty typów nie będą odejmowane punkty.
+
+\begin{enumerate}
+  \item {
+    \texttt{kwadrat x} -- liczy wartość $x^2$.
+  }
+
+  \item {
+    \texttt{srednia\_geometryczna a b} -- liczy wartość średniej geometrycznej 
+    liczb $a$ i $b$. Dla przypomnienia: wynosi ona $\sqrt{ab}$. Do obliczenia 
+    pierwiastka możesz użyć funkcji \texttt{sqrt}.
+  }
+
+  \item {
+    \texttt{minimum a b} -- wybiera mniejszą z wartości $a$ i $b$.
+  }
+
+  \item {
+    \texttt{silnia n} -- liczy silnię z $n$.
+  }
+\end{enumerate}
+
+
+\end{document}

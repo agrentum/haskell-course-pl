@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\newcounter{qcounter}
+\newenvironment{questions}
+  {\begin{list}{\textbf{Zadanie \arabic{qcounter}}}{\usecounter{qcounter}}}%
+  {\end{list}}%
+
+\title{Haskell}
+\author{Grupa C}
+\date{2~maja 2014}
+
+\begin{document}
+
+\maketitle
+
+Na kartce papieru napisz definicje funkcji opisanych poniżej. Nie musisz
+przejmować się typami, za konflikty typów nie będą odejmowane punkty.
+
+\begin{enumerate}
+  \item {
+    \texttt{mi2km d} -- przelicza podany w milach dystans $d$ na kilometry.
+    Możesz przyjąć, że 1 mila to 1.6 kilometra.
+  }
+
+  \item {
+    \texttt{delta a b c} -- liczy wartość wyznacznika równania kwadratowego
+    postaci $ax^2+bx+c=0$, gdzie $a \neq 0$.
+  }
+
+  \item {
+    \texttt{do\_zera n} -- zwraca wartość liczby różniącej się o $1$ od
+    $n$, ale znajdującej się bliżej zera. W przypadku zera wynik może być
+    dowolny. 
+    
+    Przykłady: \texttt{do\_zera (-3)} zwraca $-2$, 
+    a \texttt{do\_zera 5} zwraca 4.
+  }
+
+  \item {
+    \texttt{potega n k} -- liczy wartość $n^k$. Uwaga! Nie używaj wbudowanego
+    w Haskella operatora \texttt{\^}.
+  }
+\end{enumerate}
+
+
+\end{document}
